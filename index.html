@@ -10,6 +10,18 @@
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on('init', function(user) {
+				if (!user) {
+					window.netlifyIdentity.on('login', function() {
+						document.location.href = '/admin/';
+					});
+				}
+			});
+		}
+	</script>
 	<link rel="shortcut icon" href="images/uploads/2023/03/favicon.png" type="image/x-icon" />
 		
 					<!-- Apple Touch Icon -->
