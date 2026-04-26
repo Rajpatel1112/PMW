@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads/cms"
+public_folder: "images/uploads/cms"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Short summary shown in search results (150–160 chars)." }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Upload a square image (1080×1080 px recommended)." }
+      - { label: "Body", name: "body", widget: "markdown" }
